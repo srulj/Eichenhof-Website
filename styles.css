@@ -339,17 +339,32 @@ ul {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 40px;
+        gap: 32px;
         transition: var(--transition-smooth);
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+        padding: 0;
+        margin: 0;
+        list-style: none;
     }
 
     .nav-menu.active {
         right: 0;
     }
 
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
     .nav-menu a {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        display: block;
+        padding: 12px 24px;
+        width: 100%;
+    }
+
+    .nav-menu a:hover {
+        background-color: rgba(205, 162, 80, 0.1);
     }
 }
 
