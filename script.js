@@ -1,4 +1,4 @@
-/**
+    /**
  * Restaurant Eichenhof - Front-End Logic
  * Updated: May 2026
  */
@@ -148,29 +148,73 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // 6. GALERIE LIGHTBOX MODAL
+    // 6. GALERIE LIGHTBOX MODAL WITH ZOOM
     // ==========================================================================
     const galleryItems = document.querySelectorAll('.gallery-item');
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxZoomIn = document.getElementById('lightbox-zoom-in');
+    const lightboxZoomOut = document.getElementById('lightbox-zoom-out');
+    const lightboxZoomReset = document.getElementById('lightbox-zoom-reset');
+    const lightboxZoomLevel = document.getElementById('lightbox-zoom-level');
 
-    // Open lightbox for gallery items
+    // Zoom state
+    let currentZoom = 1;
+    const zoomStep = 0.25;
+    const minZoom = 0.5;
+    const maxZoom = 5;
+
+    // Function to open lightbox with image
     const openLightbox = (imgSrc, imgTitle, imgCat) => {
-        if (!lightboxModal || !lightboxImg) return;
-        
         lightboxImg.src = imgSrc;
-        lightboxImg.alt = imgTitle || 'Gallery Image';
-        lightboxCaption.innerHTML = imgTitle && imgCat 
-            ? `<strong>${imgTitle}</strong> &mdash; ${imgCat}`
-            : '';
+        lightboxImg.alt = imgTitle;
+        lightboxCaption.innerHTML = `<strong>${imgTitle}</strong> &mdash; ${imgCat}`;
+        
+        // Reset zoom when opening new image
+        currentZoom = 1;
+        updateZoom();
         
         lightboxModal.classList.add('active');
         document.body.style.overflow = 'hidden'; // Lock body scrolling
     };
 
+    // Function to update zoom level
+    const updateZoom = () => {
+        lightboxImg.style.transform = `scale(${currentZoom})`;
+        lightboxZoomLevel.textContent = `${Math.round(currentZoom * 100)}%`;
+        if (currentZoom > 1) {
+            lightboxImg.classList.add('zoomed');
+        } else {
+            lightboxImg.classList.remove('zoomed');
+        }
+    };
+
+    // Zoom in function
+    const zoomIn = () => {
+        if (currentZoom < maxZoom) {
+            currentZoom = Math.min(currentZoom + zoomStep, maxZoom);
+            updateZoom();
+        }
+    };
+
+    // Zoom out function
+    const zoomOut = () => {
+        if (currentZoom > minZoom) {
+            currentZoom = Math.max(currentZoom - zoomStep, minZoom);
+            updateZoom();
+        }
+    };
+
+    // Reset zoom function
+    const resetZoom = () => {
+        currentZoom = 1;
+        updateZoom();
+    };
+
     if (lightboxModal && lightboxImg && lightboxClose) {
+        // Gallery item click handlers
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
                 const imgSrc = item.getAttribute('data-image');
@@ -180,75 +224,83 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Handle menu flyer clickable cards (open corresponding gallery image)
-        const menuFlyerClickables = document.querySelectorAll('.menu-flyer-clickable[data-gallery-target]');
-        menuFlyerClickables.forEach(card => {
-            card.addEventListener('click', () => {
-                const targetFileName = card.getAttribute('data-gallery-target');
-                // Find matching gallery item
-                const matchingGalleryItem = document.querySelector(`.gallery-item[data-image*="${targetFileName}"]`);
-                if (matchingGalleryItem) {
-                    const imgSrc = matchingGalleryItem.getAttribute('data-image');
-                    const imgTitle = matchingGalleryItem.getAttribute('data-title');
-                    const imgCat = matchingGalleryItem.getAttribute('data-category');
-                    openLightbox(imgSrc, imgTitle, imgCat);
-                } else {
-                    // Fallback: try to construct URL from common patterns
-                    const basePath = 'https://www.restaurant-eichenhof.net/';
-                    let constructedUrl = '';
-                    
-                    if (targetFileName.includes('saisonales') || targetFileName.includes('mittagstisch')) {
-                        constructedUrl = `${basePath}files/${targetFileName}`;
-                    } else if (targetFileName.includes('speisen')) {
-                        constructedUrl = `${basePath}files/${targetFileName}`;
-                    } else if (targetFileName.includes('landkarte')) {
-                        constructedUrl = `${basePath}images/oeffnungszeiten-anfahrt/${targetFileName}`;
-                    }
-                    
-                    if (constructedUrl) {
-                        openLightbox(constructedUrl, targetFileName.replace('.jpg', ''), '');
-                    }
-                }
-            });
-        });
-
-        // Handle directions map image click
-        const directionsMapImages = document.querySelectorAll('.directions-map-img[data-gallery-target]');
-        directionsMapImages.forEach(mapImg => {
-            mapImg.addEventListener('click', () => {
-                const targetFileName = mapImg.getAttribute('data-gallery-target');
-                const matchingGalleryItem = document.querySelector(`.gallery-item[data-image*="${targetFileName}"]`);
-                if (matchingGalleryItem) {
-                    const imgSrc = matchingGalleryItem.getAttribute('data-image');
-                    const imgTitle = matchingGalleryItem.getAttribute('data-title');
-                    const imgCat = matchingGalleryItem.getAttribute('data-category');
-                    openLightbox(imgSrc, imgTitle, imgCat);
-                }
-            });
-        });
-
+        // Close lightbox function
         const closeLightbox = () => {
             lightboxModal.classList.remove('active');
             document.body.style.overflow = ''; // Restore body scrolling
             setTimeout(() => {
                 lightboxImg.src = '';
+                resetZoom();
             }, 300);
         };
 
+        // Close button
         lightboxClose.addEventListener('click', closeLightbox);
         
+        // Click outside to close
         lightboxModal.addEventListener('click', (e) => {
             if (e.target === lightboxModal) {
                 closeLightbox();
             }
         });
 
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
-                closeLightbox();
+        // Zoom controls
+        if (lightboxZoomIn) {
+            lightboxZoomIn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                zoomIn();
+            });
+        }
+
+        if (lightboxZoomOut) {
+            lightboxZoomOut.addEventListener('click', (e) => {
+                e.stopPropagation();
+                zoomOut();
+            });
+        }
+
+        if (lightboxZoomReset) {
+            lightboxZoomReset.addEventListener('click', (e) => {
+                e.stopPropagation();
+                resetZoom();
+            });
+        }
+
+        // Click on image to toggle zoom
+        lightboxImg.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentZoom >= maxZoom) {
+                resetZoom();
+            } else {
+                zoomIn();
             }
         });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightboxModal.classList.contains('active')) return;
+            
+            switch(e.key) {
+                case 'Escape':
+                    closeLightbox();
+                    break;
+                case '+':
+                case '=':
+                    e.preventDefault();
+                    zoomIn();
+                    break;
+                case '-':
+                    e.preventDefault();
+                    zoomOut();
+                    break;
+                case '0':
+                    resetZoom();
+                    break;
+            }
+        });
+
+        // Expose openLightbox globally for menu flyer cards
+        window.openLightbox = openLightbox;
     }
 
     // ==========================================================================

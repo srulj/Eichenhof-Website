@@ -49,7 +49,7 @@
                 
                 <!-- Nav Links -->
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#about" class="nav-link">Über uns</a></li>
+                    <li><a href="#about" class="nav-link">Startseite</a></li>
                     <li><a href="#restaurant" class="nav-link">Restaurant</a></li>
                     <li><a href="#menu" class="nav-link">Speisen</a></li>
                     <li><a href="#history" class="nav-link">Geschichte</a></li>
@@ -213,8 +213,8 @@
 
                 <!-- Tab: Saisonales -->
                 <div class="menu-tab-pane active" id="tab-saison">
-                <div class="menu-flyer-grid">
-                    <div class="menu-flyer-card menu-flyer-clickable" data-gallery-target="saisonales.jpg" style="max-width: 500px; margin: 0 auto;">
+                    <div class="menu-flyer-grid">
+                        <div class="menu-flyer-card" style="max-width: 500px; margin: 0 auto; cursor: pointer;" onclick="openLightbox('https://www.restaurant-eichenhof.net/files/saisonales.jpg', 'Aktuelle Saisonkarte', 'Speisen')">
                             <div class="menu-flyer-image">
                                 <div class="photo-placeholder">
                                     <img src="https://www.restaurant-eichenhof.net/files/saisonales.jpg" alt="Saisonkarte" onerror="this.style.display='none'">
@@ -233,8 +233,8 @@
 
                 <!-- Tab: Mittagstisch -->
                 <div class="menu-tab-pane" id="tab-mittag">
-                <div class="menu-flyer-grid">
-                    <div class="menu-flyer-card menu-flyer-clickable" data-gallery-target="mittagstisch.jpg" style="max-width: 500px; margin: 0 auto;">
+                    <div class="menu-flyer-grid">
+                        <div class="menu-flyer-card" style="max-width: 500px; margin: 0 auto; cursor: pointer;" onclick="openLightbox('https://www.restaurant-eichenhof.net/files/mittagstisch.jpg', 'Aktuelle Mittagskarte', 'Speisen')">
                             <div class="menu-flyer-image">
                                 <div class="photo-placeholder">
                                     <img src="https://www.restaurant-eichenhof.net/files/mittagstisch.jpg" alt="Mittagstisch" onerror="this.style.display='none'">
@@ -253,7 +253,7 @@
 
                 <!-- Tab: Hauptspeisen -->
                 <div class="menu-tab-pane" id="tab-haupt">
-                    <p class="text-center text-muted menu-classics-intro">Ausgewählte Klassiker unseres Hauses:</p>
+                    <p class="text-center" style="margin-bottom: 24px; color: var(--color-text-muted);">Ausgewählte Klassiker unseres Hauses:</p>
                     <div class="menu-grid">
                         <article class="menu-item">
                             <div class="menu-item-info">
@@ -298,7 +298,7 @@
 
                     <!-- Flyer images list -->
                     <div class="menu-flyer-grid">
-                        <div class="menu-flyer-card menu-flyer-clickable" data-gallery-target="speisen1.jpg">
+                        <div class="menu-flyer-card" onclick="openLightbox('https://www.restaurant-eichenhof.net/files/speisen1.jpg', 'Speisekarte Seite 1', 'Speisen')" style="cursor:pointer;">
                             <div class="menu-flyer-image">
                                 <div class="photo-placeholder">
                                     <img src="https://www.restaurant-eichenhof.net/files/speisen1.jpg" alt="Speisekarte Seite 1" onerror="this.style.display='none'">
@@ -307,7 +307,7 @@
                             </div>
                             <div class="menu-flyer-info"><h4 class="menu-flyer-title">Speisekarte - Teil 1</h4></div>
                         </div>
-                        <div class="menu-flyer-card menu-flyer-clickable" data-gallery-target="speisen2.jpg">
+                        <div class="menu-flyer-card" onclick="openLightbox('https://www.restaurant-eichenhof.net/files/speisen2.jpg', 'Speisekarte Seite 2', 'Speisen')" style="cursor:pointer;">
                             <div class="menu-flyer-image">
                                 <div class="photo-placeholder">
                                     <img src="https://www.restaurant-eichenhof.net/files/speisen2.jpg" alt="Speisekarte Seite 2" onerror="this.style.display='none'">
@@ -316,7 +316,7 @@
                             </div>
                             <div class="menu-flyer-info"><h4 class="menu-flyer-title">Speisekarte - Teil 2</h4></div>
                         </div>
-                        <div class="menu-flyer-card menu-flyer-clickable" data-gallery-target="speisen3.jpg">
+                        <div class="menu-flyer-card" onclick="openLightbox('https://www.restaurant-eichenhof.net/files/speisen3.jpg', 'Speisekarte Seite 3', 'Speisen')" style="cursor:pointer;">
                             <div class="menu-flyer-image">
                                 <div class="photo-placeholder">
                                     <img src="https://www.restaurant-eichenhof.net/files/speisen3.jpg" alt="Speisekarte Seite 3" onerror="this.style.display='none'">
@@ -325,7 +325,7 @@
                             </div>
                             <div class="menu-flyer-info"><h4 class="menu-flyer-title">Speisekarte - Teil 3</h4></div>
                         </div>
-                        <div class="menu-flyer-card menu-flyer-clickable" data-gallery-target="speisen4.jpg">
+                        <div class="menu-flyer-card" onclick="openLightbox('https://www.restaurant-eichenhof.net/files/speisen4.jpg', 'Speisekarte Seite 4', 'Speisen')" style="cursor:pointer;">
                             <div class="menu-flyer-image">
                                 <div class="photo-placeholder">
                                     <img src="https://www.restaurant-eichenhof.net/files/speisen4.jpg" alt="Speisekarte Seite 4" onerror="this.style.display='none'">
@@ -345,7 +345,7 @@
                 <div class="text-center">
                     <span class="badge">Chronik</span>
                     <h2 class="section-title" id="history-title">Die Geschichte des Eichenhofs</h2>
-                    <p class="max-width-600">Unser Eichenhof atmet Geschichte. Seit über 270 Jahren heißen wir Reisende und Gäste auf unserem Grundbesitz willkommen.</p>
+                    <p style="max-width: 600px; margin: 0 auto;">Unser Eichenhof atmet Geschichte. Seit über 270 Jahren heißen wir Reisende und Gäste auf unserem Grundbesitz willkommen.</p>
                 </div>
 
                 <div class="timeline">
@@ -353,8 +353,8 @@
                     <div class="timeline-item timeline-left fade-in-section">
                         <div class="timeline-content">
                             <span class="timeline-year">1755</span>
-                            <div class="timeline-images">
-                                <img src="https://www.restaurant-eichenhof.net/images/geschichte/geschichte1.jpg" alt="Altes niedersächsisches Bauernhaus" class="timeline-img">
+                            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:12px; border-radius:4px; overflow:hidden;">
+                                <img src="https://www.restaurant-eichenhof.net/images/geschichte/geschichte1.jpg" alt="Altes niedersächsisches Bauernhaus" style="width:100%; height:120px; object-fit:cover; border-radius:4px; border: 1px solid rgba(205,162,80,0.3);">
                             </div>
                             <h3 class="timeline-title">Ein landwirtschaftlicher Betrieb</h3>
                             <p>Der Eichenhof kommt in Familienbesitz. Damals handelt es sich um einen großen landwirtschaftlichen Betrieb. Dem alten niedersächsischen Bauernhaus war jedoch schon von Beginn an eine Gaststube angegliedert.</p>
@@ -365,8 +365,8 @@
                     <div class="timeline-item timeline-right fade-in-section">
                         <div class="timeline-content">
                             <span class="timeline-year">1972/73</span>
-                            <div class="timeline-images">
-                                <img src="https://www.restaurant-eichenhof.net/images/geschichte/geschichte2.jpg" alt="Fachwerkhaus Aufbau" class="timeline-img">
+                            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:12px; border-radius:4px; overflow:hidden;">
+                                <img src="https://www.restaurant-eichenhof.net/images/geschichte/geschichte2.jpg" alt="Fachwerkhaus Aufbau" style="width:100%; height:120px; object-fit:cover; border-radius:4px; border: 1px solid rgba(205,162,80,0.3);">
                             </div>
                             <h3 class="timeline-title">Ende der Landwirtschaft</h3>
                             <p>Durch den Verkauf der Ländereien an die Stadt Hamburg für den Bau der Autobahn A7 wird die Landwirtschaft endgültig aufgegeben. Stattdessen entsteht ein neues, wunderschönes reetgedecktes Fachwerkhaus speziell als Restaurant.</p>
@@ -610,7 +610,7 @@
         <section id="contact-section" class="reservation-section section-padding fade-in-section" aria-labelledby="contact-title">
             <div class="container">
                 <div class="text-center" style="margin-bottom: 50px;">
-                    <span class="badge">Ihr Weg zu uns</span>
+                    <span class="badge">Ihr Weg zu Uns</span>
                     <h2 class="section-title" id="contact-title">Öffnungszeiten, Anfahrt & Kontakt</h2>
                 </div>
 
@@ -652,35 +652,35 @@
                             </svg>
                             <div class="info-text">
                                 <h4>Telefon & Erreichbarkeit</h4>
-                                <p><strong>Tel:</strong> <a href="tel:+49407603483" class="text-gold">040 / 760 34 83</a></p>
+                                <p><strong>Tel:</strong> <a href="tel:+49407603483" style="color:var(--color-gold);">040 / 760 34 83</a></p>
                                 <p><strong>Fax:</strong> 040 / 761 120 25</p>
-                                <p><strong>E-Mail:</strong> <a href="mailto:restaurant-eichenhof@t-online.de" class="text-gold">restaurant-eichenhof@t-online.de</a></p>
+                                <p><strong>E-Mail:</strong> <a href="mailto:restaurant-eichenhof@t-online.de" style="color:var(--color-gold);">restaurant-eichenhof@t-online.de</a></p>
                             </div>
                         </div>
 
                         <!-- Directions Anfahrt Box with landkarte thumbnail -->
                         <div class="directions-box">
                             <h4>Anfahrt & Lage</h4>
-                        <div class="directions-layout">
-                            <div class="directions-routes-wrapper">
-                                <p class="text-muted small">Verkehrsgünstig am südlichsten Stadtrand Hamburgs.</p>
-                                
-                                <div class="direction-route">
-                                    <strong>Mit dem Auto von Hannover:</strong>
-                                    <p class="text-muted small">A7 Richtung Elbtunnel. Abfahrt Marmstorf, rechts. Linke Straßenseite „Eichenhof".</p>
+                            <div class="directions-layout">
+                                <div class="directions-routes-wrapper">
+                                    <p style="font-size:0.9rem; margin-bottom: 12px; opacity:0.85;">Verkehrsgünstig am südlichsten Stadtrand Hamburgs.</p>
+                                    
+                                    <div class="direction-route">
+                                        <strong>Mit dem Auto von Hannover:</strong>
+                                        <p style="font-size:0.85rem; opacity:0.85;">A7 Richtung Elbtunnel. Abfahrt Marmstorf, rechts. Linke Straßenseite „Eichenhof".</p>
+                                    </div>
+                                    
+                                    <div class="direction-route">
+                                        <strong>Mit dem Auto von Bremen:</strong>
+                                        <p style="font-size:0.85rem; opacity:0.85;">Über A1 auf A261. Abfahrt Lürade/Marmstorf geradeaus. Nach der 2. Kreuzung linke Straßenseite.</p>
+                                    </div>
+                                    
+                                    <div class="direction-route">
+                                        <strong>Öffentliche Verkehrsmittel:</strong>
+                                        <p style="font-size:0.85rem; opacity:0.85;">Buslinien 340, 4210 oder 4200 bis Haltestelle <strong></strong></p>
+                                    </div>
                                 </div>
-                                
-                                <div class="direction-route">
-                                    <strong>Mit dem Auto von Bremen:</strong>
-                                    <p class="text-muted small">Über A1 auf A261. Abfahrt Lürade/Marmstorf geradeaus. Nach der 2. Kreuzung linke Straßenseite.</p>
-                                </div>
-                                
-                                <div class="direction-route">
-                                    <strong>Öffentliche Verkehrsmittel:</strong>
-                                    <p class="text-muted small">Buslinien 340, 4210 oder 4200 bis Haltestelle <strong>Appelbütteler Weg</strong>.</p>
-                                </div>
-                            </div>
-                            <img src="https://www.restaurant-eichenhof.net/images/oeffnungszeiten-anfahrt/landkarte-klein.jpg" alt="Anfahrtskarte" class="directions-map-img menu-flyer-clickable" data-gallery-target="landkarte-klein.jpg">
+                                <img src="https://www.restaurant-eichenhof.net/images/oeffnungszeiten-anfahrt/landkarte-klein.jpg" alt="Anfahrtskarte" class="directions-map-img" onclick="document.querySelector('.gallery-item[data-image*=\\'landkarte-klein.jpg\\']').click()">
                             </div>
                         </div>
                     </div>
@@ -735,15 +735,15 @@
                             </div>
 
                             <!-- Consent Checkbox -->
-                    <div class="form-checkbox-group">
-                        <input type="checkbox" id="contact-consent" required aria-required="true">
-                        <label for="contact-consent">Ich stimme den <a href="#privacy" id="consent-privacy-link" class="privacy-link">Datenschutzbestimmungen</a> zu. *</label>
-                    </div>
+                            <div class="form-checkbox-group">
+                                <input type="checkbox" id="contact-consent" required aria-required="true">
+                                <label for="contact-consent">Ich stimme den <a href="#privacy" id="consent-privacy-link" style="color:var(--color-primary-green); font-weight:600; text-decoration:underline;">Datenschutzbestimmungen</a> zu. *</label>
+                            </div>
 
-                    <button type="submit" class="btn btn-primary btn-block">Anfrage senden</button>
-                    
-                    <!-- Feedback response -->
-                    <div id="contact-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Anfrage senden</button>
+                            
+                            <!-- Feedback response -->
+                            <div id="contact-feedback" class="form-feedback" role="alert"></div>
                         </form>
                     </div>
                 </div>
@@ -788,12 +788,10 @@
                 <!-- Col 3: Contact details -->
                 <div class="footer-col">
                     <h4>Kontakt</h4>
-                    <address class="footer-address">
-                        <p>Telefon: <a href="tel:+49407603483" class="text-gold">040 / 760 34 83</a></p>
-                        <p>Fax: 040 / 761 120 25</p>
-                        <p>E-Mail: <a href="mailto:restaurant-eichenhof@t-online.de" class="text-gold">restaurant-eichenhof@t-online.de</a></p>
-                        <p>Bremer Straße 320, 21077 Hamburg</p>
-                    </address>
+                    <p>Telefon: 040 / 760 34 83</p>
+                    <p>Fax: 040 / 761 120 25</p>
+                    <p>E-Mail: restaurant-eichenhof@t-online.de</p>
+                    <p>Bremer Straße 320, 21077 Hamburg</p>
                 </div>
 
                 <!-- Col 4: Quality & Integrity Badge -->
@@ -827,6 +825,12 @@
             <button class="lightbox-close" id="lightbox-close" aria-label="Schließen">&times;</button>
             <img src="" alt="" class="lightbox-img" id="lightbox-img">
             <div class="lightbox-caption" id="lightbox-caption"></div>
+            <div class="lightbox-zoom-controls">
+                <button class="lightbox-zoom-btn" id="lightbox-zoom-out" aria-label="Herauszoomen">&minus;</button>
+                <span class="lightbox-zoom-level" id="lightbox-zoom-level">100%</span>
+                <button class="lightbox-zoom-btn" id="lightbox-zoom-in" aria-label="Hineinzoomen">&plus;</button>
+                <button class="lightbox-zoom-btn lightbox-zoom-reset" id="lightbox-zoom-reset" aria-label="Zoom zurücksetzen">Reset</button>
+            </div>
         </div>
     </div>
 
