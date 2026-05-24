@@ -95,6 +95,12 @@ ul {
 
 .text-center { text-align: center; }
 .text-gold { color: var(--color-gold); }
+.text-muted { color: var(--color-text-muted); }
+.text-primary-green { color: var(--color-primary-green); }
+.max-width-600 { max-width: 600px; margin: 0 auto; }
+.btn-block { width: 100%; }
+.small { font-size: 0.85rem; }
+.privacy-link { color: var(--color-primary-green); font-weight: 600; text-decoration: underline; }
 
 .section-padding {
     padding: 100px 0;
@@ -771,6 +777,21 @@ ul {
     flex-direction: column;
 }
 
+.menu-flyer-clickable {
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.menu-flyer-clickable:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--color-gold);
+}
+
+.menu-classics-intro {
+    margin-bottom: 24px;
+}
+
 .menu-flyer-image {
     height: 400px;
     overflow: hidden;
@@ -947,6 +968,23 @@ ul {
     border: 1px solid rgba(205, 162, 80, 0.25);
     position: relative;
     transition: var(--transition-smooth);
+}
+
+.timeline-images {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.timeline-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(205, 162, 80, 0.3);
 }
 
 .timeline-content:hover {
@@ -1186,6 +1224,21 @@ ul {
 }
 
 /* Anfahrt Card styles */
+.directions-map-img {
+    max-width: 200px;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 1px solid var(--color-border);
+}
+
+.directions-map-img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--color-gold);
+}
+
 .directions-box {
     margin-top: 30px;
     background-color: rgba(252, 251, 247, 0.05);
@@ -1211,6 +1264,11 @@ ul {
 
 .directions-routes-wrapper {
     flex-grow: 1;
+    color: white;
+}
+
+.directions-routes-wrapper p {
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .directions-map-img {
@@ -1555,4 +1613,350 @@ textarea.form-control {
 @keyframes slideUpMobile {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
+}
+
+/* ==========================================================================
+   COMPREHENSIVE MOBILE OPTIMIZATIONS
+   ========================================================================== */
+
+/* Touch-friendly improvements */
+@media (max-width: 768px) {
+    /* Increase tap targets for touch */
+    .btn {
+        min-height: 48px;
+        min-width: 48px;
+        padding: 14px 24px;
+    }
+    
+    .nav-link,
+    .menu-tab-btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Improve form inputs for mobile */
+    .form-control {
+        font-size: 16px; /* Prevents zoom on iOS */
+        min-height: 48px;
+        padding: 14px 16px;
+    }
+    
+    /* Optimize gallery for mobile */
+    .gallery-item {
+        height: 180px;
+    }
+    
+    .gallery-overlay svg {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .gallery-title {
+        font-size: 1.1rem;
+    }
+    
+    /* Improve lightbox for mobile */
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        font-size: 28px;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    
+    .lightbox-caption {
+        font-size: 1rem;
+        padding: 0 16px;
+    }
+    
+    /* Optimize menu tabs for mobile */
+    .menu-tabs {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .menu-tab-btn {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+    
+    /* Optimize space cards for mobile */
+    .space-card-content {
+        padding: 20px;
+    }
+    
+    .space-card-title {
+        font-size: 1.5rem;
+    }
+    
+    /* Optimize timeline for mobile */
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .timeline-year {
+        font-size: 1.5rem;
+    }
+    
+    .timeline-title {
+        font-size: 1.2rem;
+    }
+    
+    /* Optimize info card for mobile */
+    .info-card {
+        padding: 24px;
+    }
+    
+    .info-card h3 {
+        font-size: 1.6rem;
+    }
+    
+    /* Optimize form container for mobile */
+    .reservation-form-container {
+        padding: 24px;
+    }
+    
+    .reservation-form-container h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Optimize checkbox for mobile */
+    .form-checkbox-group input[type="checkbox"] {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .form-checkbox-group label {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    /* Optimize footer for mobile */
+    .footer {
+        padding: 40px 0 20px 0;
+    }
+    
+    .footer-col h4 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-col p {
+        font-size: 0.85rem;
+    }
+    
+    /* Improve social icons tap area */
+    .social-icon {
+        width: 44px;
+        height: 44px;
+    }
+    
+    /* Optimize mobile sticky CTA */
+    .mobile-sticky-cta {
+        padding: 12px 16px;
+        padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
+    
+    .mobile-sticky-cta .btn {
+        font-size: 0.85rem;
+        padding: 12px 16px;
+    }
+}
+
+/* Extra small devices (phones in portrait, < 480px) */
+@media (max-width: 480px) {
+    /* Typography adjustments */
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    /* Hero optimizations */
+    .hero-content {
+        padding: 0 16px;
+    }
+    
+    .hero-slogan-img {
+        max-width: 200px;
+    }
+    
+    .hero-desc {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        gap: 12px;
+    }
+    
+    /* Section padding */
+    .section-padding {
+        padding: 40px 0;
+    }
+    
+    /* About section */
+    .about-heading {
+        font-size: 2rem;
+    }
+    
+    .about-highlight {
+        font-size: 1.2rem;
+    }
+    
+    /* Menu items */
+    .menu-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .menu-item-head {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .menu-item-price {
+        font-size: 1.1rem;
+    }
+    
+    /* Gallery */
+    .gallery-item {
+        height: 150px;
+    }
+    
+    /* Directions */
+    .directions-box {
+        padding: 16px;
+    }
+    
+    .direction-route strong {
+        font-size: 0.8rem;
+    }
+    
+    /* Footer bottom */
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Landscape orientation optimizations */
+@media (max-width: 992px) and (orientation: landscape) {
+    .hero {
+        min-height: 80vh;
+    }
+    
+    .hero-slogan-img {
+        max-width: 250px;
+    }
+    
+    .hero-desc {
+        font-size: 1.3rem;
+        margin-bottom: 24px;
+    }
+    
+    .gallery-item {
+        height: 200px;
+    }
+}
+
+/* High density displays (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .photo-placeholder img,
+    .gallery-item img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .fade-in-section {
+        opacity: 1;
+        transform: none;
+    }
+    
+    .hero-bg {
+        transform: none !important;
+    }
+}
+
+/* Dark mode support (optional - respects user preference) */
+@media (prefers-color-scheme: dark) {
+    /* Keep the same colors as the site already uses dark themes in sections */
+    /* This ensures consistency if user has dark mode enabled */
+}
+
+/* Print styles */
+@media print {
+    .header-nav,
+    .mobile-sticky-cta,
+    .lightbox-modal,
+    .hamburger,
+    .nav-menu,
+    .gallery-section,
+    .footer {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .section-padding {
+        padding: 20px 0;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    .btn {
+        border: 1px solid black;
+        background: none;
+        color: black;
+    }
+}
+
+/* Ensure safe area insets for notched devices (iPhone X+) */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+    
+    .header-nav {
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .mobile-sticky-cta {
+        padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
 }

@@ -156,19 +156,74 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxClose = document.getElementById('lightbox-close');
 
+    // Open lightbox for gallery items
+    const openLightbox = (imgSrc, imgTitle, imgCat) => {
+        if (!lightboxModal || !lightboxImg) return;
+        
+        lightboxImg.src = imgSrc;
+        lightboxImg.alt = imgTitle || 'Gallery Image';
+        lightboxCaption.innerHTML = imgTitle && imgCat 
+            ? `<strong>${imgTitle}</strong> &mdash; ${imgCat}`
+            : '';
+        
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Lock body scrolling
+    };
+
     if (lightboxModal && lightboxImg && lightboxClose) {
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
                 const imgSrc = item.getAttribute('data-image');
                 const imgTitle = item.getAttribute('data-title');
                 const imgCat = item.getAttribute('data-category');
+                openLightbox(imgSrc, imgTitle, imgCat);
+            });
+        });
 
-                lightboxImg.src = imgSrc;
-                lightboxImg.alt = imgTitle;
-                lightboxCaption.innerHTML = `<strong>${imgTitle}</strong> &mdash; ${imgCat}`;
-                
-                lightboxModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Lock body scrolling
+        // Handle menu flyer clickable cards (open corresponding gallery image)
+        const menuFlyerClickables = document.querySelectorAll('.menu-flyer-clickable[data-gallery-target]');
+        menuFlyerClickables.forEach(card => {
+            card.addEventListener('click', () => {
+                const targetFileName = card.getAttribute('data-gallery-target');
+                // Find matching gallery item
+                const matchingGalleryItem = document.querySelector(`.gallery-item[data-image*="${targetFileName}"]`);
+                if (matchingGalleryItem) {
+                    const imgSrc = matchingGalleryItem.getAttribute('data-image');
+                    const imgTitle = matchingGalleryItem.getAttribute('data-title');
+                    const imgCat = matchingGalleryItem.getAttribute('data-category');
+                    openLightbox(imgSrc, imgTitle, imgCat);
+                } else {
+                    // Fallback: try to construct URL from common patterns
+                    const basePath = 'https://www.restaurant-eichenhof.net/';
+                    let constructedUrl = '';
+                    
+                    if (targetFileName.includes('saisonales') || targetFileName.includes('mittagstisch')) {
+                        constructedUrl = `${basePath}files/${targetFileName}`;
+                    } else if (targetFileName.includes('speisen')) {
+                        constructedUrl = `${basePath}files/${targetFileName}`;
+                    } else if (targetFileName.includes('landkarte')) {
+                        constructedUrl = `${basePath}images/oeffnungszeiten-anfahrt/${targetFileName}`;
+                    }
+                    
+                    if (constructedUrl) {
+                        openLightbox(constructedUrl, targetFileName.replace('.jpg', ''), '');
+                    }
+                }
+            });
+        });
+
+        // Handle directions map image click
+        const directionsMapImages = document.querySelectorAll('.directions-map-img[data-gallery-target]');
+        directionsMapImages.forEach(mapImg => {
+            mapImg.addEventListener('click', () => {
+                const targetFileName = mapImg.getAttribute('data-gallery-target');
+                const matchingGalleryItem = document.querySelector(`.gallery-item[data-image*="${targetFileName}"]`);
+                if (matchingGalleryItem) {
+                    const imgSrc = matchingGalleryItem.getAttribute('data-image');
+                    const imgTitle = matchingGalleryItem.getAttribute('data-title');
+                    const imgCat = matchingGalleryItem.getAttribute('data-category');
+                    openLightbox(imgSrc, imgTitle, imgCat);
+                }
             });
         });
 
