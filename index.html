@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Restaurant Eichenhof | Ihr gastliches Haus im Süden Hamburgs</title>
+    <meta name="description" content="Seit 1755 in Familienbesitz: Genießen Sie traditionelle, gute deutsche Küche im reetgedeckten Fachwerkhaus am See. Gemütlicher Gastraum, Saal & Terrasse in Hamburg-Appelbüttel.">
+    <meta name="keywords" content="Restaurant Eichenhof, Hamburg-Appelbüttel, Reetdachhaus, deutsches Restaurant Harburg, Mittagstisch, Feierlichkeiten, Bratkartoffeln Hamburg, Ejup Fetahu">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Restaurant Eichenhof | Ihr gastliches Haus in Hamburg">
+    <meta property="og:description" content="Klassische deutsche Küche frisch zubereitet, idyllische Sommerterrasse am See, Saal für Feiern. Seit 8 Generationen für Sie da.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+         HEADER & NAVIGATION
+         ========================================================================== -->
+    <header class="header-nav" id="main-header" role="banner">
+        <div class="container nav-container">
+            <a href="#hero" class="logo" aria-label="Restaurant Eichenhof Startseite">
+                <img src="https://www.restaurant-eichenhof.net/images/logo.gif" alt="Eichenhof Wappen Logo" class="logo-img">
+                <div class="logo-text-wrapper">
+                    <span class="logo-main">Eichenhof</span>
+                    <span class="logo-sub">Hamburg · Seit 1755</span>
+                </div>
+            </a>
+            
+            <nav role="navigation" aria-label="Hauptnavigation">
+                <!-- Hamburger Icon for Mobile -->
+                <button class="hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen/schließen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Nav Links -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#about" class="nav-link">Startseite</a></li>
+                    <li><a href="#restaurant" class="nav-link">Restaurant</a></li>
+                    <li><a href="#menu" class="nav-link">Speisen</a></li>
+                    <li><a href="#history" class="nav-link">Geschichte</a></li>
+                    <li><a href="#gallery" class="nav-link">Galerie</a></li>
+                    <li><a href="#contact-section" class="nav-link">Kontakt & Anfahrt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         MAIN CONTENT
+         ========================================================================== -->
+    <main role="main">
+        
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="hero" aria-label="Willkommen im Restaurant Eichenhof">
+            <div class="hero-bg" id="hero-bg"></div>
+            <div class="hero-content">
+                <img src="https://www.restaurant-eichenhof.net/images/slogan.gif" alt="Ihr gastliches Haus im Süden Hamburgs" class="hero-slogan-img">
+                <h1 class="hero-title" style="display:none;">Restaurant Eichenhof</h1> <!-- Hidden for SEO, shown visual via slogan banner -->
+                <p class="hero-desc">Seit 1755 in Familienbesitz — Gemütliche Gastlichkeit im reetgedeckten Fachwerkhaus</p>
+                <div class="hero-buttons">
+                    <a href="#contact-section" class="btn btn-primary" id="hero-cta-reserve">Tisch reservieren</a>
+                    <a href="#menu" class="btn btn-secondary" id="hero-cta-menu">Speisen & Mittagstisch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. STARTSEITE / WELCOME -->
+        <section id="about" class="about-section section-padding fade-in-section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <span class="badge">Herzlich willkommen</span>
+                        <h2 class="about-heading" id="about-title">Willkommen im Eichenhof</h2>
+                        <p class="about-highlight">„Liebe Gäste, liebe Besucher, wir möchten Ihnen unser Restaurant näher bringen und Sie herzlich einladen, uns zu besuchen.“</p>
+                        <p class="about-text">
+                            Auf diesen Seiten können Sie schon einmal einige Blicke auf unser schönes Restaurant werfen. Wir wünschen Ihnen viel Spaß beim Stöbern und würden uns freuen, Sie bald persönlich als unsere Gäste begrüßen zu dürfen.
+                        </p>
+                        <p class="about-text">
+                            Entfliehen Sie dem Alltag und dem Stress der Großstadt in unseren gemütlichen, traditionellen Räumlichkeiten am südlichsten Stadtrand Hamburgs.
+                        </p>
+                        <p class="about-signature">Herzlichst, Ihr Team vom Restaurant Eichenhof</p>
+                    </div>
+                    
+                    <div class="about-image-wrapper">
+                        <div class="about-image-card">
+                            <div class="photo-placeholder">
+                                <img src="https://www.restaurant-eichenhof.net/images/home/willkommen.jpg" alt="Willkommen im Restaurant Eichenhof" onerror="this.style.display='none'">
+                                <svg class="photo-placeholder-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 5c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm-5 10v-5h10v5H7z"/>
+                                </svg>
+                                <div class="photo-placeholder-text">[FOTO: Außenansicht Reetdach]</div>
+                                <div class="photo-placeholder-tag">Unser historisches Fachwerkhaus</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. RESTAURANT (GASTRÄUME, SAAL, TERRASSE) -->
+        <section id="restaurant" class="spaces-section section-padding fade-in-section" aria-labelledby="restaurant-title">
+            <div class="container">
+                <div class="text-center">
+                    <span class="badge">Gemütlichkeit & Feste</span>
+                    <h2 class="section-title" id="restaurant-title">Gasträume, Saal & Terrasse</h2>
+                </div>
+                
+                <div class="spaces-grid">
+                    <!-- Gastraum -->
+                    <article class="space-card">
+                        <div class="space-card-image">
+                            <div class="photo-placeholder">
+                                <img src="https://www.restaurant-eichenhof.net/images/gastraeume/gastraum1.jpg" alt="Gemütliche Gasträume im Eichenhof" onerror="this.style.display='none'">
+                                <svg class="photo-placeholder-icon" viewBox="0 0 24 24">
+                                    <path d="M7 13h10v2H7zm0-4h10v2H7zm0-4h10v2H7zm-3 14h16v2H4zm1-3V2h14v11h2v3H3v-3h2zm2-2h10V4H7v7z"/>
+                                </svg>
+                                <div class="photo-placeholder-text">[FOTO: Gasträume]</div>
+                                <div class="photo-placeholder-tag">Gemütlichkeit am Kamin</div>
+                            </div>
+                        </div>
+                        <div class="space-card-content">
+                            <h3 class="space-card-title">Die Gasträume</h3>
+                            <p class="space-card-desc">In unseren gemütlichen Gasträumen können Sie den Alltag und Stress der Großstadt hinter sich lassen. Hier servieren wir Ihnen auch werktäglich unseren schmackhaften, preiswerten Mittagstisch.</p>
+                            <div class="space-card-meta">
+                                <span>Traditionelle Stuben</span>
+                                <a href="#contact-section" class="text-gold" style="font-weight:600;">Tisch reservieren &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Saal -->
+                    <article class="space-card">
+                        <div class="space-card-image">
+                            <div class="photo-placeholder">
+                                <img src="https://www.restaurant-eichenhof.net/images/saal/saal.jpg" alt="Festsaal im Restaurant Eichenhof" onerror="this.style.display='none'">
+                                <svg class="photo-placeholder-icon" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/>
+                                </svg>
+                                <div class="photo-placeholder-text">[FOTO: Der Saal]</div>
+                                <div class="photo-placeholder-tag">Saal für Feierlichkeiten</div>
+                            </div>
+                        </div>
+                        <div class="space-card-content">
+                            <h3 class="space-card-title">Der Saal</h3>
+                            <p class="space-card-desc">Wann immer Sie einen Grund zum Feiern haben: Für Veranstaltungen steht Ihnen ein liebevoll dekorierter Saal für bis zu 60 Personen zur Verfügung. Die Festküche bietet Menüs und Buffets nach Wunsch.</p>
+                            <div class="space-card-meta">
+                                <span>Veranstaltungen</span>
+                                <div class="space-card-capacity" aria-label="Kapazität bis zu 60 Personen">
+                                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 1.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                                    <span>Max. 60 Personen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Terrasse -->
+                    <article class="space-card">
+                        <div class="space-card-image">
+                            <div class="photo-placeholder">
+                                <img src="https://www.restaurant-eichenhof.net/images/terrasse/terrasse1.jpg" alt="Sommerterrasse am See" onerror="this.style.display='none'">
+                                <svg class="photo-placeholder-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+                                </svg>
+                                <div class="photo-placeholder-text">[FOTO: Terrasse]</div>
+                                <div class="photo-placeholder-tag">Idylle am kleinen See</div>
+                            </div>
+                        </div>
+                        <div class="space-card-content">
+                            <h3 class="space-card-title">Die Terrasse</h3>
+                            <p class="space-card-desc">Unser reetgedecktes Restaurant liegt mit seiner wunderschönen Sommerterrasse an einem kleinen See. Auch für Kinder gibt es viel zu entdecken: Ein kleiner Spielplatz lässt hier keine Langeweile aufkommen.</p>
+                            <div class="space-card-meta">
+                                <span>Außenbereich</span>
+                                <span>Garten am See & Spielplatz</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SPEISEN SECTION -->
+        <section id="menu" class="menu-section section-padding fade-in-section" aria-labelledby="menu-title">
+            <div class="container">
+                <div class="text-center">
+                    <span class="badge">Frisch & Regional</span>
+                    <h2 class="section-title" id="menu-title">Unsere Küche</h2>
+                    <p class="menu-intro">
+                        Die Gäste unseres Restaurants erwartet eine traditionelle, gute deutsche Küche im besten Sinne, denn alle Speisen werden stets frisch zubereitet. Wir verwöhnen Sie das ganze Jahr mit saisonalen und regionalen Gerichten. Besonders beliebt bei unseren Stammgästen sind auch die vielfältigen <strong>Bratkartoffelgerichte</strong>.
+                    </p>
+                </div>
+
+                <!-- Tabs navigation -->
+                <div class="menu-tabs">
+                    <button class="menu-tab-btn active" data-tab="tab-saison">Saisonales</button>
+                    <button class="menu-tab-btn" data-tab="tab-mittag">Mittagstisch</button>
+                    <button class="menu-tab-btn" data-tab="tab-haupt">Speisekarte</button>
+                </div>
+
+                <!-- Tab: Saisonales -->
+                <div class="menu-tab-pane active" id="tab-saison">
+                    <div class="menu-flyer-grid">
+                        <div class="menu-flyer-card" style="max-width: 500px; margin: 0 auto; cursor: pointer;" onclick="document.querySelector('.gallery-item[data-image*=\\'saisonales.jpg\\']').click()">
+                            <div class="menu-flyer-image">
+                                <div class="photo-placeholder">
+                                    <img src="https://www.restaurant-eichenhof.net/files/saisonales.jpg" alt="Saisonkarte" onerror="this.style.display='none'">
+                                    <svg class="photo-placeholder-icon" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                                    <div class="photo-placeholder-text">[BILD: saisonales.jpg]</div>
+                                    <div class="photo-placeholder-tag">Saisonale Spezialitäten</div>
+                                </div>
+                            </div>
+                            <div class="menu-flyer-info">
+                                <h3 class="menu-flyer-title">Saisonale Köstlichkeiten</h3>
+                                <p class="menu-flyer-desc">Unsere saisonalen Spezialitäten wechseln regelmäßig. Klicken Sie auf die Karte zum Vergrößern.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Mittagstisch -->
+                <div class="menu-tab-pane" id="tab-mittag">
+                    <div class="menu-flyer-grid">
+                        <div class="menu-flyer-card" style="max-width: 500px; margin: 0 auto; cursor: pointer;" onclick="document.querySelector('.gallery-item[data-image*=\\'mittagstisch.jpg\\']').click()">
+                            <div class="menu-flyer-image">
+                                <div class="photo-placeholder">
+                                    <img src="https://www.restaurant-eichenhof.net/files/mittagstisch.jpg" alt="Mittagstisch" onerror="this.style.display='none'">
+                                    <svg class="photo-placeholder-icon" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
+                                    <div class="photo-placeholder-text">[BILD: mittagstisch.jpg]</div>
+                                    <div class="photo-placeholder-tag">Werktäglicher Mittagstisch</div>
+                                </div>
+                            </div>
+                            <div class="menu-flyer-info">
+                                <h3 class="menu-flyer-title">Günstig & Schmackhaft</h3>
+                                <p class="menu-flyer-desc">Dienstag bis Freitag ab 11:45 Uhr. Klicken Sie zum Vergrößern der Mittagskarte.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Hauptspeisen -->
+                <div class="menu-tab-pane" id="tab-haupt">
+                    <p class="text-center" style="margin-bottom: 24px; color: var(--color-text-muted);">Ausgewählte Klassiker unseres Hauses:</p>
+                    <div class="menu-grid">
+                        <article class="menu-item">
+                            <div class="menu-item-info">
+                                <div class="menu-item-head">
+                                    <h3 class="menu-item-title">Eichenhof Bratkartoffelpfanne</h3>
+                                    <span class="menu-item-price">18,50 €</span>
+                                </div>
+                                <p class="menu-item-desc">Unsere allseits beliebten, krossen Bratkartoffeln mit Speck und Zwiebeln, serviert mit zwei Spiegeleiern und Gewürzgurke.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="menu-item">
+                            <div class="menu-item-info">
+                                <div class="menu-item-head">
+                                    <h3 class="menu-item-title">Hamburger Pannfisch</h3>
+                                    <span class="menu-item-price">23,80 €</span>
+                                </div>
+                                <p class="menu-item-desc">Kross gebratenes Fischfilet auf Senfsauce, serviert mit unseren traditionellen Bratkartoffeln.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu-item">
+                            <div class="menu-item-info">
+                                <div class="menu-item-head">
+                                    <h3 class="menu-item-title">Schollenfilet „Finkenwerder Art“</h3>
+                                    <span class="menu-item-price">22,90 €</span>
+                                </div>
+                                <p class="menu-item-desc">Frisch gebratenes Schollenfilet mit Speckstippe, Zwiebeln und reichlich hausgemachten Bratkartoffeln.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu-item">
+                            <div class="menu-item-info">
+                                <div class="menu-item-head">
+                                    <h3 class="menu-item-title">Rumpsteak mit Kräuterbutter</h3>
+                                    <span class="menu-item-price">29,50 €</span>
+                                </div>
+                                <p class="menu-item-desc">Saftiges Rumpsteak (250g) vom Grill, mit hausgemachter Kräuterbutter, Bohnenbündchen und Speck-Bratkartoffeln.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Flyer images list -->
+                    <div class="menu-flyer-grid">
+                        <div class="menu-flyer-card" onclick="document.querySelector('.gallery-item[data-image*=\\'speisen1.jpg\\']').click()" style="cursor:pointer;">
+                            <div class="menu-flyer-image">
+                                <div class="photo-placeholder">
+                                    <img src="https://www.restaurant-eichenhof.net/files/speisen1.jpg" alt="Speisekarte Seite 1" onerror="this.style.display='none'">
+                                    <div class="photo-placeholder-text">[BILD: speisen1.jpg]</div>
+                                </div>
+                            </div>
+                            <div class="menu-flyer-info"><h4 class="menu-flyer-title">Speisekarte - Teil 1</h4></div>
+                        </div>
+                        <div class="menu-flyer-card" onclick="document.querySelector('.gallery-item[data-image*=\\'speisen2.jpg\\']').click()" style="cursor:pointer;">
+                            <div class="menu-flyer-image">
+                                <div class="photo-placeholder">
+                                    <img src="https://www.restaurant-eichenhof.net/files/speisen2.jpg" alt="Speisekarte Seite 2" onerror="this.style.display='none'">
+                                    <div class="photo-placeholder-text">[BILD: speisen2.jpg]</div>
+                                </div>
+                            </div>
+                            <div class="menu-flyer-info"><h4 class="menu-flyer-title">Speisekarte - Teil 2</h4></div>
+                        </div>
+                        <div class="menu-flyer-card" onclick="document.querySelector('.gallery-item[data-image*=\\'speisen3.jpg\\']').click()" style="cursor:pointer;">
+                            <div class="menu-flyer-image">
+                                <div class="photo-placeholder">
+                                    <img src="https://www.restaurant-eichenhof.net/files/speisen3.jpg" alt="Speisekarte Seite 3" onerror="this.style.display='none'">
+                                    <div class="photo-placeholder-text">[BILD: speisen3.jpg]</div>
+                                </div>
+                            </div>
+                            <div class="menu-flyer-info"><h4 class="menu-flyer-title">Speisekarte - Teil 3</h4></div>
+                        </div>
+                        <div class="menu-flyer-card" onclick="document.querySelector('.gallery-item[data-image*=\\'speisen4.jpg\\']').click()" style="cursor:pointer;">
+                            <div class="menu-flyer-image">
+                                <div class="photo-placeholder">
+                                    <img src="https://www.restaurant-eichenhof.net/files/speisen4.jpg" alt="Speisekarte Seite 4" onerror="this.style.display='none'">
+                                    <div class="photo-placeholder-text">[BILD: speisen4.jpg]</div>
+                                </div>
+                            </div>
+                            <div class="menu-flyer-info"><h4 class="menu-flyer-title">Speisekarte - Teil 4</h4></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. HISTORY SECTION -->
+        <section id="history" class="history-section section-padding" aria-labelledby="history-title">
+            <div class="container">
+                <div class="text-center">
+                    <span class="badge">Chronik</span>
+                    <h2 class="section-title" id="history-title">Die Geschichte des Eichenhofs</h2>
+                    <p style="max-width: 600px; margin: 0 auto;">Unser Eichenhof atmet Geschichte. Seit über 270 Jahren heißen wir Reisende und Gäste auf unserem Grundbesitz willkommen.</p>
+                </div>
+
+                <div class="timeline">
+                    <!-- 1755 -->
+                    <div class="timeline-item timeline-left fade-in-section">
+                        <div class="timeline-content">
+                            <span class="timeline-year">1755</span>
+                            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:12px; border-radius:4px; overflow:hidden;">
+                                <img src="https://www.restaurant-eichenhof.net/images/geschichte/geschichte1.jpg" alt="Altes niedersächsisches Bauernhaus" style="width:100%; height:120px; object-fit:cover; border-radius:4px; border: 1px solid rgba(205,162,80,0.3);">
+                            </div>
+                            <h3 class="timeline-title">Ein landwirtschaftlicher Betrieb</h3>
+                            <p>Der Eichenhof kommt in Familienbesitz. Damals handelt es sich um einen großen landwirtschaftlichen Betrieb. Dem alten niedersächsischen Bauernhaus war jedoch schon von Beginn an eine Gaststube angegliedert.</p>
+                        </div>
+                    </div>
+
+                    <!-- 1972/73 -->
+                    <div class="timeline-item timeline-right fade-in-section">
+                        <div class="timeline-content">
+                            <span class="timeline-year">1972/73</span>
+                            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:12px; border-radius:4px; overflow:hidden;">
+                                <img src="https://www.restaurant-eichenhof.net/images/geschichte/geschichte2.jpg" alt="Fachwerkhaus Aufbau" style="width:100%; height:120px; object-fit:cover; border-radius:4px; border: 1px solid rgba(205,162,80,0.3);">
+                            </div>
+                            <h3 class="timeline-title">Ende der Landwirtschaft</h3>
+                            <p>Durch den Verkauf der Ländereien an die Stadt Hamburg für den Bau der Autobahn A7 wird die Landwirtschaft endgültig aufgegeben. Stattdessen entsteht ein neues, wunderschönes reetgedecktes Fachwerkhaus speziell als Restaurant.</p>
+                        </div>
+                    </div>
+
+                    <!-- Heute -->
+                    <div class="timeline-item timeline-left fade-in-section">
+                        <div class="timeline-content">
+                            <span class="timeline-year">Heute</span>
+                            <h3 class="timeline-title">In 8. Generation</h3>
+                            <p>Dieses Restaurant, der Eichenhof, wird auch heute noch in der 8. Generation von der Familie geführt. Wir freuen uns auf Sie und heißen Sie herzlich willkommen!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. GALERIE SECTION -->
+        <section id="gallery" class="gallery-section section-padding fade-in-section" aria-labelledby="gallery-title">
+            <div class="container">
+                <div class="text-center">
+                    <span class="badge">Impressionen</span>
+                    <h2 class="section-title" id="gallery-title">Unsere Bildergalerie</h2>
+                    <p style="max-width: 600px; margin: 0 auto; margin-bottom: 30px;">Werfen Sie einen Blick auf unser Restaurant, die Gasträume, unseren Saal und die wunderschöne See-Terrasse.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Photo 1: Home Panorama -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/home/panorama.jpg" data-title="Außenansicht Haupthaus" data-category="Haupthaus">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/home/panorama.jpg" alt="Panorama Startseite" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Panorama Außenansicht</span>
+                                <span class="gallery-category">Haupthaus</span>
+                            </div>
+                            <span class="photo-placeholder-text">[home-panorama.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2: Willkommen -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/home/willkommen.jpg" data-title="Eichenhof Eingang" data-category="Außenbereich">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/home/willkommen.jpg" alt="Willkommen Bild" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Eichenhof Fachwerk</span>
+                                <span class="gallery-category">Haupthaus</span>
+                            </div>
+                            <span class="photo-placeholder-text">[home-willkommen.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3: Gastraum 1 -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/gastraeume/gastraum1.jpg" data-title="Uringer Gastraum" data-category="Gasträume">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/gastraeume/gastraum1.jpg" alt="Gastraum 1" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Gemütliche Nische</span>
+                                <span class="gallery-category">Gasträume</span>
+                            </div>
+                            <span class="photo-placeholder-text">[gastraum1.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4: Gastraum 2 -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/gastraeume/gastraum2.jpg" data-title="Kaminzimmer" data-category="Gasträume">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/gastraeume/gastraum2.jpg" alt="Gastraum 2" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Traditionelle Holzstube</span>
+                                <span class="gallery-category">Gasträume</span>
+                            </div>
+                            <span class="photo-placeholder-text">[gastraum2.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5: Gastraum 3 -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/gastraeume/gastraum3.jpg" data-title="Gaststube Details" data-category="Gasträume">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/gastraeume/gastraum3.jpg" alt="Gastraum 3" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Gedeckte Tische</span>
+                                <span class="gallery-category">Gasträume</span>
+                            </div>
+                            <span class="photo-placeholder-text">[gastraum3.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6: Saal -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/saal/saal.jpg" data-title="Liebevoll dekorierter Saal" data-category="Saal">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/saal/saal.jpg" alt="Der Saal" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Festsaal (bis 60 Pers.)</span>
+                                <span class="gallery-category">Saal</span>
+                            </div>
+                            <span class="photo-placeholder-text">[saal-saal.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 7: Bar -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/saal/bar.jpg" data-title="Unsere Saal-Bar" data-category="Saal">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/saal/bar.jpg" alt="Die Bar" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Die Getränkebar</span>
+                                <span class="gallery-category">Saal</span>
+                            </div>
+                            <span class="photo-placeholder-text">[saal-bar.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 8: Teller -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/saal/teller.jpg" data-title="Festliches Menü-Gedeck" data-category="Speisen">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/saal/teller.jpg" alt="Teller gedeckt" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Festliches Gedeck</span>
+                                <span class="gallery-category">Saal</span>
+                            </div>
+                            <span class="photo-placeholder-text">[saal-teller.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 9: Terrasse 1 -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/terrasse/terrasse1.jpg" data-title="Sommerterrasse am See" data-category="Terrasse">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/terrasse/terrasse1.jpg" alt="Terrasse 1" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">See-Terrasse</span>
+                                <span class="gallery-category">Terrasse</span>
+                            </div>
+                            <span class="photo-placeholder-text">[terrasse-terrasse1.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 10: Terrasse 2 -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/terrasse/terrasse2.jpg" data-title="Kaffeegarten im Schatten" data-category="Terrasse">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/terrasse/terrasse2.jpg" alt="Terrasse 2" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Idyllischer Kaffeegarten</span>
+                                <span class="gallery-category">Terrasse</span>
+                            </div>
+                            <span class="photo-placeholder-text">[terrasse-terrasse2.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 11: Gasthaus -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/terrasse/gasthaus.jpg" data-title="Blick vom See auf den Eichenhof" data-category="Terrasse">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/terrasse/gasthaus.jpg" alt="Reetdach vom See" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Reetdachhaus am See</span>
+                                <span class="gallery-category">Terrasse</span>
+                            </div>
+                            <span class="photo-placeholder-text">[terrasse-gasthaus.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 12: Speise Teller -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/speisen/teller.jpg" data-title="Klassischer Speisenteller" data-category="Speisen">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/speisen/teller.jpg" alt="Speise Teller" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Regionale Hausmannskost</span>
+                                <span class="gallery-category">Speisen</span>
+                            </div>
+                            <span class="photo-placeholder-text">[speisen-teller.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 13: Speisen-Karte 1 -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/files/speisen1.jpg" data-title="Speisekarte Seite 1" data-category="Speisen">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/files/speisen1.jpg" alt="Karte 1" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Speisekarte (Teil 1)</span>
+                                <span class="gallery-category">Speisen</span>
+                            </div>
+                            <span class="photo-placeholder-text">[speisen-karte1.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 14: Saisonales -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/files/saisonales.jpg" data-title="Aktuelle Saisonkarte" data-category="Speisen">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/files/saisonales.jpg" alt="Saisonkarte" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Saisonkarte</span>
+                                <span class="gallery-category">Speisen</span>
+                            </div>
+                            <span class="photo-placeholder-text">[saisonales.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 15: Mittagstisch -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/files/mittagstisch.jpg" data-title="Aktuelle Mittagskarte" data-category="Speisen">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/files/mittagstisch.jpg" alt="Mittagskarte" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Mittagstisch</span>
+                                <span class="gallery-category">Speisen</span>
+                            </div>
+                            <span class="photo-placeholder-text">[mittagstisch.jpg]</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo 16: Anfahrt Landkarte -->
+                    <div class="gallery-item" data-image="https://www.restaurant-eichenhof.net/images/oeffnungszeiten-anfahrt/landkarte-klein.jpg" data-title="Anfahrtskarte Eichenhof" data-category="Anfahrt">
+                        <div class="photo-placeholder">
+                            <img src="https://www.restaurant-eichenhof.net/images/oeffnungszeiten-anfahrt/landkarte-klein.jpg" alt="Landkarte" onerror="this.style.display='none'">
+                            <div class="gallery-overlay">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                <span class="gallery-title">Straßenkarte Appelbüttel</span>
+                                <span class="gallery-category">Anfahrt</span>
+                            </div>
+                            <span class="photo-placeholder-text">[oeffnungszeiten-landkarte.jpg]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. SERVICE & KONTAKT, ÖFFNUNGSZEITEN & ANFAHRT -->
+        <section id="contact-section" class="reservation-section section-padding fade-in-section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 50px;">
+                    <span class="badge">Ihr Weg zu Uns</span>
+                    <h2 class="section-title" id="contact-title">Öffnungszeiten, Anfahrt & Kontakt</h2>
+                </div>
+
+                <div class="reserve-grid">
+                    <!-- Left Column: Info Card & Directions -->
+                    <div class="info-card">
+                        <h3>Kontakt & Zeiten</h3>
+                        
+                        <!-- Open Hours -->
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                            <div class="info-text">
+                                <h4>Öffnungszeiten</h4>
+                                <p><strong>Dienstag bis Sonntag:</strong> 11:45 – 21:00 Uhr</p>
+                                <p>Warme Küche: 12:00 – 20:30 Uhr</p>
+                                <p><strong>Montag:</strong> Ruhetag</p>
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <div class="info-text">
+                                <h4>Adresse</h4>
+                                <p>Restaurant Eichenhof</p>
+                                <p>Inhaber: Ejup Fetahu</p>
+                                <p>Bremer Straße 320, 21077 Hamburg (Appelbüttel)</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone, Fax & Mail -->
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.01-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <div class="info-text">
+                                <h4>Telefon & Erreichbarkeit</h4>
+                                <p><strong>Tel:</strong> <a href="tel:+49407603483" style="color:var(--color-gold);">040 / 760 34 83</a></p>
+                                <p><strong>Fax:</strong> 040 / 761 120 25</p>
+                                <p><strong>E-Mail:</strong> <a href="mailto:restaurant-eichenhof@t-online.de" style="color:var(--color-gold);">restaurant-eichenhof@t-online.de</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Directions Anfahrt Box with landkarte thumbnail -->
+                        <div class="directions-box">
+                            <h4>Anfahrt & Lage</h4>
+                            <div class="directions-layout">
+                                <div class="directions-routes-wrapper">
+                                    <p style="font-size:0.9rem; margin-bottom: 12px; opacity:0.85;">Verkehrsgünstig am südlichsten Stadtrand Hamburgs.</p>
+                                    
+                                    <div class="direction-route">
+                                        <strong>Mit dem Auto von Hannover:</strong>
+                                        <p style="font-size:0.85rem; opacity:0.85;">A7 Richtung Elbtunnel. Abfahrt Marmstorf, rechts. Linke Straßenseite „Eichenhof".</p>
+                                    </div>
+                                    
+                                    <div class="direction-route">
+                                        <strong>Mit dem Auto von Bremen:</strong>
+                                        <p style="font-size:0.85rem; opacity:0.85;">Über A1 auf A261. Abfahrt Lürade/Marmstorf geradeaus. Nach der 2. Kreuzung linke Straßenseite.</p>
+                                    </div>
+                                    
+                                    <div class="direction-route">
+                                        <strong>Öffentliche Verkehrsmittel:</strong>
+                                        <p style="font-size:0.85rem; opacity:0.85;">Buslinien 340, 4210 oder 4200 bis Haltestelle <strong>Appelbütteler Weg</strong>.</p>
+                                    </div>
+                                </div>
+                                <img src="https://www.restaurant-eichenhof.net/images/oeffnungszeiten-anfahrt/landkarte-klein.jpg" alt="Anfahrtskarte" class="directions-map-img" onclick="document.querySelector('.gallery-item[data-image*=\\'landkarte-klein.jpg\\']').click()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Contact/Reservation Form -->
+                    <div class="reservation-form-container">
+                        <img src="https://www.restaurant-eichenhof.net/images/kontakt/wappen.gif" alt="Wappen" class="wappen-watermark">
+                        
+                        <h3 style="font-size: 1.8rem; margin-bottom: 25px; color: var(--color-primary-dark);">Kontaktformular</h3>
+                        
+                        <form id="contact-form" novalidate aria-label="Kontaktformular Tischreservierung">
+                            <!-- Name / Vorname -->
+                            <div class="form-group-row-2">
+                                <div class="form-group">
+                                    <label for="contact-name">Nachname, Vorname *</label>
+                                    <input type="text" id="contact-name" class="form-control" placeholder="Mustermann, Max" required aria-required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-phone">Telefon</label>
+                                    <input type="tel" id="contact-phone" class="form-control" placeholder="Für Rückfragen">
+                                </div>
+                            </div>
+                            
+                            <!-- Address fields -->
+                            <div class="form-group-row-2">
+                                <div class="form-group">
+                                    <label for="contact-street">Straße, Nr.</label>
+                                    <input type="text" id="contact-street" class="form-control" placeholder="Musterstraße 12">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-zip">PLZ, Ort</label>
+                                    <input type="text" id="contact-zip" class="form-control" placeholder="21077 Hamburg">
+                                </div>
+                            </div>
+
+                            <!-- E-Mail / Fax -->
+                            <div class="form-group-row-2">
+                                <div class="form-group">
+                                    <label for="contact-email">E-Mail-Adresse *</label>
+                                    <input type="email" id="contact-email" class="form-control" placeholder="max@mustermann.de" required aria-required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-fax">Fax</label>
+                                    <input type="text" id="contact-fax" class="form-control" placeholder="Faxnummer">
+                                </div>
+                            </div>
+
+                            <!-- Anfrage Message -->
+                            <div class="form-group">
+                                <label for="contact-message">Ihre Anfrage (mindestens 10 Zeichen) *</label>
+                                <textarea id="contact-message" class="form-control" minlength="10" placeholder="Ihre Nachricht bezüglich Reservierung, Tischwunsch oder Feierlichkeiten..." required aria-required="true"></textarea>
+                            </div>
+
+                            <!-- Consent Checkbox -->
+                            <div class="form-checkbox-group">
+                                <input type="checkbox" id="contact-consent" required aria-required="true">
+                                <label for="contact-consent">Ich stimme den <a href="#privacy" id="consent-privacy-link" style="color:var(--color-primary-green); font-weight:600; text-decoration:underline;">Datenschutzbestimmungen</a> zu. *</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Anfrage senden</button>
+                            
+                            <!-- Feedback response -->
+                            <div id="contact-feedback" class="form-feedback" role="alert"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: About -->
+                <div class="footer-col">
+                    <h4>Restaurant Eichenhof</h4>
+                    <p>Ihr gastliches Haus im Süden Hamburgs. Seit 1755 und mittlerweile in 8. Generation im Familienbesitz.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener" aria-label="Eichenhof auf Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg>
+                        </a>
+                        <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener" aria-label="Eichenhof auf Instagram">
+                            <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.4 5.6 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.6 18.4 4 16.4 4H7.6m8.4 2.25a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5M12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9m0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">Startseite</a></li>
+                        <li><a href="#restaurant">Restaurant</a></li>
+                        <li><a href="#menu">Speisen</a></li>
+                        <li><a href="#history">Geschichte</a></li>
+                        <li><a href="#gallery">Galerie</a></li>
+                        <li><a href="#contact-section">Kontakt & Anfahrt</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact details -->
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <p>Telefon: 040 / 760 34 83</p>
+                    <p>Fax: 040 / 761 120 25</p>
+                    <p>E-Mail: restaurant-eichenhof@t-online.de</p>
+                    <p>Bremer Straße 320, 21077 Hamburg</p>
+                </div>
+
+                <!-- Col 4: Quality & Integrity Badge -->
+                <div class="footer-col">
+                    <h4>Frisch & Regional</h4>
+                    <p>Unsere traditionelle gute deutsche Küche zeichnet sich durch saisonale Zutaten und fangfrische Fischspezialitäten aus.</p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Restaurant Eichenhof Hamburg. Alle Rechte vorbehalten. Inhaber: Ejup Fetahu.</p>
+                <div class="footer-bottom-links">
+                    <a href="#legal" id="legal-impressum">Impressum</a>
+                    <a href="#privacy" id="legal-privacy">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         MOBILE STICKY CTA (RESERVATION FOR MOBILE SCREENS)
+         ========================================================================== -->
+    <div class="mobile-sticky-cta" id="mobile-sticky-cta" role="complementary" aria-label="Schnellkontakt Mobil">
+        <a href="#contact-section" class="btn btn-primary">Tisch reservieren / Anfrage senden</a>
+    </div>
+
+    <!-- LIGHTBOX MODAL FOR GALERIE -->
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Bilder-Vorschau">
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Schließen">&times;</button>
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Link to Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
