@@ -36,6 +36,10 @@
     /* Layout Constraints */
     --container-width: 1200px;
     --header-height: 80px;
+    
+    /* Mobile Touch Targets (WCAG recommended minimum 44px) */
+    --touch-target-min: 44px;
+    --touch-target-comfortable: 48px;
 }
 
 /* ==========================================================================
@@ -1624,4 +1628,426 @@ textarea.form-control {
 @keyframes slideUpMobile {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
+}
+
+/* ==========================================================================
+   MOBILE OPTIMIZATIONS & ENHANCEMENTS
+   ========================================================================== */
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 576px) {
+    html, body {
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+}
+
+/* Enhanced Touch Targets for Mobile */
+@media (max-width: 992px) {
+    /* Larger hamburger button for easier tapping */
+    .hamburger {
+        padding: 12px;
+        min-width: var(--touch-target-comfortable);
+        min-height: var(--touch-target-comfortable);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+        margin-bottom: 6px;
+    }
+    
+    /* Larger navigation links with better touch areas */
+    .nav-menu a {
+        min-height: var(--touch-target-comfortable);
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    
+    /* Enhanced button sizes for mobile */
+    .btn {
+        min-height: var(--touch-target-comfortable);
+        padding: 14px 28px;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+    
+    /* Hero buttons stacked vertically on mobile */
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* Mobile Typography Improvements */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.4rem; }
+    h4 { font-size: 1.15rem; }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-heading {
+        font-size: 2rem;
+    }
+    
+    .space-card-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Mobile Form Enhancements */
+@media (max-width: 768px) {
+    .form-control {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+        min-height: var(--touch-target-comfortable);
+        padding: 14px 16px;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .reservation-form-container {
+        padding: 24px;
+    }
+    
+    /* Larger checkbox for easier tapping */
+    .form-checkbox-group input[type="checkbox"] {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .form-checkbox-group label {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+/* Mobile Gallery Improvements */
+@media (max-width: 768px) {
+    .gallery-item {
+        height: 200px;
+    }
+    
+    .gallery-overlay {
+        opacity: 1; /* Always show overlay on mobile for better UX */
+        background-color: rgba(8, 28, 21, 0.7);
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+    }
+    
+    .gallery-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile Lightbox Enhancements */
+@media (max-width: 768px) {
+    .lightbox-container {
+        max-width: 95%;
+        max-height: 75vh;
+    }
+    
+    .lightbox-img {
+        max-height: 65vh;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        font-size: 32px;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    
+    .lightbox-zoom-controls {
+        bottom: 15px;
+        gap: 8px;
+    }
+    
+    .lightbox-zoom-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+    
+    .lightbox-caption {
+        font-size: 1rem;
+        margin-top: 10px;
+        padding: 0 20px;
+    }
+}
+
+/* Mobile Card Improvements */
+@media (max-width: 768px) {
+    .space-card-image {
+        height: 200px;
+    }
+    
+    .space-card-content {
+        padding: 24px;
+    }
+    
+    .space-card-title {
+        font-size: 1.4rem;
+    }
+    
+    .space-card-desc {
+        font-size: 0.9rem;
+    }
+    
+    .menu-flyer-image {
+        height: 300px;
+    }
+    
+    .menu-tabs {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .menu-tab-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        min-height: var(--touch-target-min);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Mobile Timeline Enhancements */
+@media (max-width: 768px) {
+    .timeline {
+        margin: 40px auto 0 auto;
+    }
+    
+    .timeline-item {
+        padding-left: 60px;
+        padding-right: 15px;
+    }
+    
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .timeline-year {
+        font-size: 1.5rem;
+    }
+    
+    .timeline-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile Info Card Improvements */
+@media (max-width: 768px) {
+    .info-card {
+        padding: 24px;
+    }
+    
+    .info-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .info-item {
+        gap: 12px;
+    }
+    
+    .info-icon {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+    }
+    
+    .info-text h4 {
+        font-size: 0.9rem;
+    }
+    
+    .info-text p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Footer Improvements */
+@media (max-width: 576px) {
+    .footer {
+        padding: 40px 0 20px 0;
+    }
+    
+    .footer-col h4 {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+    }
+    
+    .footer-col p,
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-bottom-links {
+        gap: 16px;
+    }
+}
+
+/* Prevent zoom on double tap for iOS */
+@media (max-width: 992px) {
+    * {
+        touch-action: manipulation;
+    }
+    
+    /* Remove 300ms click delay on mobile */
+    a, button, input, select, textarea {
+        touch-action: manipulation;
+    }
+}
+
+/* Mobile Navigation Overlay */
+@media (max-width: 992px) {
+    /* Dark overlay when mobile menu is open */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .nav-overlay.active {
+        display: block;
+        opacity: 1;
+    }
+}
+
+/* Safe area insets for notched devices (iPhone X+) */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .mobile-sticky-cta {
+        padding-bottom: calc(16px + env(safe-area-inset-bottom));
+    }
+    
+    .header-nav {
+        padding-top: env(safe-area-inset-top);
+        height: calc(var(--header-height) + env(safe-area-inset-top));
+    }
+}
+
+/* Improved scrolling for mobile */
+@media (max-width: 992px) {
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+/* Mobile-specific padding adjustments */
+@media (max-width: 576px) {
+    .hero {
+        min-height: 80vh;
+    }
+    
+    .hero-content {
+        padding: 0 16px;
+    }
+    
+    .hero-desc {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+    
+    .about-section,
+    .spaces-section,
+    .menu-section,
+    .gallery-section {
+        padding: 50px 0;
+    }
+    
+    .history-section {
+        padding: 50px 0;
+    }
+    
+    .reservation-section {
+        padding: 50px 0;
+    }
+}
+
+/* Improve tap feedback on mobile */
+@media (max-width: 992px) {
+    .btn:active {
+        transform: scale(0.97);
+    }
+    
+    .nav-menu a:active,
+    .gallery-item:active,
+    .space-card:active {
+        opacity: 0.8;
+    }
+}
+
+/* Mobile menu scroll lock */
+body.mobile-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Ensure images load properly on mobile */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lazy loading placeholder styles */
+img[loading="lazy"] {
+    background-color: var(--color-cream-dark);
 }
