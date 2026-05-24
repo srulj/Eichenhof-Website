@@ -143,7 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const activeId = entry.target.getAttribute('id');
                 navLinks.forEach(link => {
                     const href = link.getAttribute('href');
-                    if (href === `#${activeId}` || (activeId === 'hero' && href === '#about')) {
+                    // Match the section id with the nav link href
+                    if (href === `#${activeId}`) {
                         link.classList.add('active');
                         link.setAttribute('aria-current', 'page');
                     } else {
