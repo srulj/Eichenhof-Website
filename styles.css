@@ -1164,61 +1164,8 @@ ul {
     color: var(--color-gold);
 }
 
-/* Lightbox Zoom Controls */
-.lightbox-zoom-controls {
-    position: absolute;
-    bottom: -45px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    align-items: center;
-}
-
-.lightbox-zoom-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: rgba(252, 251, 247, 0.1);
-    border: 1px solid rgba(252, 251, 247, 0.2);
-    color: var(--color-cream);
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    line-height: 1;
-}
-
-.lightbox-zoom-btn:hover {
-    background-color: var(--color-gold);
-    color: var(--color-primary-dark);
-    border-color: var(--color-gold);
-}
-
-.lightbox-zoom-reset {
-    font-size: 12px;
-    width: auto;
-    padding: 0 12px;
-    border-radius: 18px;
-}
-
-.lightbox-zoom-level {
-    color: var(--color-cream);
-    font-size: 0.85rem;
-    font-family: var(--font-sans);
-    min-width: 45px;
-    text-align: center;
-}
-
 .lightbox-img {
     transition: transform 0.3s ease;
-    cursor: zoom-in;
-}
-
-.lightbox-img.zoomed {
-    cursor: zoom-out;
 }
 
 /* ==========================================================================
@@ -1830,17 +1777,6 @@ textarea.form-control {
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-    }
-    
-    .lightbox-zoom-controls {
-        bottom: 15px;
-        gap: 8px;
-    }
-    
-    .lightbox-zoom-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 22px;
     }
     
     .lightbox-caption {

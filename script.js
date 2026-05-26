@@ -193,10 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxClose = document.getElementById('lightbox-close');
-    const lightboxZoomIn = document.getElementById('lightbox-zoom-in');
-    const lightboxZoomOut = document.getElementById('lightbox-zoom-out');
-    const lightboxZoomReset = document.getElementById('lightbox-zoom-reset');
-    const lightboxZoomLevel = document.getElementById('lightbox-zoom-level');
 
     // Zoom state
     let currentZoom = 1;
@@ -226,12 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to update zoom level
     const updateZoom = () => {
         lightboxImg.style.transform = `scale(${currentZoom})`;
-        lightboxZoomLevel.textContent = `${Math.round(currentZoom * 100)}%`;
-        if (currentZoom > 1) {
-            lightboxImg.classList.add('zoomed');
-        } else {
-            lightboxImg.classList.remove('zoomed');
-        }
     };
 
     // Zoom in function
@@ -292,38 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxModal.addEventListener('click', (e) => {
             if (e.target === lightboxModal) {
                 closeLightbox();
-            }
-        });
-
-        // Zoom controls
-        if (lightboxZoomIn) {
-            lightboxZoomIn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                zoomIn();
-            });
-        }
-
-        if (lightboxZoomOut) {
-            lightboxZoomOut.addEventListener('click', (e) => {
-                e.stopPropagation();
-                zoomOut();
-            });
-        }
-
-        if (lightboxZoomReset) {
-            lightboxZoomReset.addEventListener('click', (e) => {
-                e.stopPropagation();
-                resetZoom();
-            });
-        }
-
-        // Click on image to toggle zoom
-        lightboxImg.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (currentZoom >= maxZoom) {
-                resetZoom();
-            } else {
-                zoomIn();
             }
         });
 
@@ -393,26 +351,12 @@ document.addEventListener('DOMContentLoaded', () => {
             isPinching = false;
         });
 
-        // Keyboard navigation
+        // Keyboard navigation - only Escape to close
         document.addEventListener('keydown', (e) => {
             if (!lightboxModal.classList.contains('active')) return;
             
-            switch(e.key) {
-                case 'Escape':
-                    closeLightbox();
-                    break;
-                case '+':
-                case '=':
-                    e.preventDefault();
-                    zoomIn();
-                    break;
-                case '-':
-                    e.preventDefault();
-                    zoomOut();
-                    break;
-                case '0':
-                    resetZoom();
-                    break;
+            if (e.key === 'Escape') {
+                closeLightbox();
             }
         });
 
