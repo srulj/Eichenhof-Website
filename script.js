@@ -49,6 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     const navOverlay = document.getElementById('nav-overlay');
     
+    // Function to close mobile menu (defined early for use in other handlers)
+    const closeMobileMenu = () => {
+        if (!navToggle || !navMenu) return;
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        if (navOverlay) {
+            navOverlay.classList.remove('active');
+        }
+        document.body.classList.remove('mobile-menu-open');
+    };
+    
     // Function to toggle mobile menu
     const toggleMobileMenu = () => {
         const expanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -67,17 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             document.body.classList.remove('mobile-menu-open');
         }
-    };
-    
-    // Function to close mobile menu
-    const closeMobileMenu = () => {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        if (navOverlay) {
-            navOverlay.classList.remove('active');
-        }
-        document.body.classList.remove('mobile-menu-open');
     };
     
     if (navToggle && navMenu) {
@@ -185,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // 6. GALERIE LIGHTBOX MODAL WITH ZOOM
+    // 6. GALERIE LIGHTBOX MODAL WITH ZOOM (Pinch & Mouse Wheel)
     // ==========================================================================
     const galleryItems = document.querySelectorAll('.gallery-item');
     const lightboxModal = document.getElementById('lightbox-modal');
@@ -202,6 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const zoomStep = 0.25;
     const minZoom = 0.5;
     const maxZoom = 5;
+
+    // Pinch-to-zoom state for mobile
+    let initialPinchDistance = 0;
+    let initialZoom = 1;
+    let isPinching = false;
 
     // Function to open lightbox with image
     const openLightbox = (imgSrc, imgTitle, imgCat) => {
@@ -248,6 +254,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetZoom = () => {
         currentZoom = 1;
         updateZoom();
+    };
+
+    // Calculate distance between two touch points
+    const getPinchDistance = (touch1, touch2) => {
+        return Math.sqrt(
+            Math.pow(touch2.clientX - touch1.clientX, 2) +
+            Math.pow(touch2.clientY - touch1.clientY, 2)
+        );
     };
 
     if (lightboxModal && lightboxImg && lightboxClose) {
@@ -313,6 +327,72 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // ========================================
+        // MOUSE WHEEL ZOOM (PC)
+        // ========================================
+        lightboxModal.addEventListener('wheel', (e) => {
+            if (!lightboxModal.classList.contains('active')) return;
+            
+            e.preventDefault();
+            
+            if (e.deltaY < 0) {
+                // Scroll up = zoom in
+                zoomIn();
+            } else {
+                // Scroll down = zoom out
+                zoomOut();
+            }
+        }, { passive: false });
+
+        // ========================================
+        // PINCH-TO-ZOOM (Mobile Touch Gestures)
+        // ========================================
+        let touchStartCount = 0;
+        
+        lightboxImg.addEventListener('touchstart', (e) => {
+            if (!lightboxModal.classList.contains('active')) return;
+            
+            touchStartCount = e.touches.length;
+            
+            if (e.touches.length === 2) {
+                // Pinch gesture started
+                isPinching = true;
+                initialPinchDistance = getPinchDistance(e.touches[0], e.touches[1]);
+                initialZoom = currentZoom;
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        lightboxImg.addEventListener('touchmove', (e) => {
+            if (!lightboxModal.classList.contains('active') || !isPinching) return;
+            
+            if (e.touches.length === 2) {
+                e.preventDefault();
+                
+                const currentPinchDistance = getPinchDistance(e.touches[0], e.touches[1]);
+                const scale = currentPinchDistance / initialPinchDistance;
+                
+                // Calculate new zoom level
+                let newZoom = initialZoom * scale;
+                
+                // Clamp zoom level
+                newZoom = Math.max(minZoom, Math.min(newZoom, maxZoom));
+                
+                currentZoom = newZoom;
+                updateZoom();
+            }
+        }, { passive: false });
+
+        lightboxImg.addEventListener('touchend', (e) => {
+            if (e.touches.length < 2) {
+                isPinching = false;
+            }
+        });
+
+        lightboxImg.addEventListener('touchcancel', (e) => {
+            isPinching = false;
+        });
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (!lightboxModal.classList.contains('active')) return;
@@ -341,7 +421,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // 7. CONTACT FORM VALIDATION & INTERACTION
+    // 7. SCROLL TO RESERVATION FORM (Fix mobile CTA scroll target)
+    // ==========================================================================
+    // Handle all "Tisch reservieren" links to scroll to the form, not the section top
+    const reservationLinks = document.querySelectorAll('a[href="#contact-section"]');
+    const reservationFormContainer = document.querySelector('.reservation-form-container');
+    
+    reservationLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Close mobile menu if open
+            closeMobileMenu();
+            
+            // On mobile, scroll directly to the reservation form
+            // On desktop, also scroll to the form for better UX
+            if (reservationFormContainer) {
+                const headerOffset = 80; // Account for fixed header
+                const elementPosition = reservationFormContainer.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+                
+                // Focus the first input field after scrolling
+                setTimeout(() => {
+                    const firstInput = reservationFormContainer.querySelector('input, textarea');
+                    if (firstInput) {
+                        firstInput.focus();
+                    }
+                }, 800);
+            } else {
+                // Fallback to default behavior
+                const contactSection = document.getElementById('contact-section');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+
+    // ==========================================================================
+    // 8. CONTACT FORM VALIDATION & INTERACTION
     // ==========================================================================
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
