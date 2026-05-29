@@ -1741,11 +1741,13 @@ textarea.form-control {
         height: 200px;
     }
     
+    /* On mobile, show overlay only on tap/hover, not permanently */
     .gallery-overlay {
-        opacity: 1; /* Always show overlay on mobile for better UX */
-        background-color: rgba(8, 28, 21, 0.7);
+        opacity: 0;
+        background-color: rgba(8, 28, 21, 0.85);
     }
     
+    .gallery-item:active .gallery-overlay,
     .gallery-item:hover .gallery-overlay {
         opacity: 1;
     }
@@ -2031,4 +2033,98 @@ img {
 /* Lazy loading placeholder styles */
 img[loading="lazy"] {
     background-color: var(--color-cream-dark);
+}
+
+/* ---------- 12. Cookie Banner ---------- */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-cream);
+    z-index: 9999;
+    box-shadow: 0 -4px 30px rgba(0,0,0,0.15);
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    padding: 24px;
+}
+
+.cookie-banner--visible {
+    transform: translateY(0);
+}
+
+.cookie-bannerinner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.cookie-bannertitle {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.cookie-bannertext {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.cookie-bannertext a {
+    color: var(--color-primary-green);
+    text-decoration: underline;
+}
+
+.cookie-banneroptions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.cookie-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.cookie-option input {
+    accent-color: var(--color-primary-green);
+}
+
+.cookie-bannerbuttons {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.cookie-banner .btn {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.88rem;
+    flex: 1;
+    min-width: 140px;
+}
+
+/* Mobile Cookie Banner */
+@media (max-width: 768px) {
+    .cookie-banner {
+        padding: 16px;
+    }
+    
+    .cookie-bannerinner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .cookie-bannerbuttons {
+        flex-direction: column;
+    }
+    
+    .cookie-banner .btn {
+        width: 100%;
+    }
 }

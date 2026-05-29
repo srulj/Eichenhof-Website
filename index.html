@@ -60,6 +60,34 @@
         </div>
     </header>
     
+    <!-- COOKIE BANNER -->
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-hidden="true">
+        <div class="cookie-bannerinner">
+            <div class="cookie-bannercontent">
+                <h2 id="cookie-title" class="cookie-bannertitle">🍪 Privatsphäre-Einstellungen</h2>
+                <p class="cookie-bannertext">
+                    Wir verwenden Cookies und binden externe Inhalte (z.B. Google Maps) nur mit Ihrer Einwilligung ein.
+                    Weitere Informationen finden Sie in unserer <a href="pages/datenschutz.html">Datenschutzerklärung</a>.
+                </p>
+            </div>
+            <div class="cookie-banneroptions">
+                <label class="cookie-option">
+                    <input type="checkbox" checked disabled>
+                    <span>Notwendig (immer aktiv)</span>
+                </label>
+                <label class="cookie-option">
+                    <input type="checkbox" id="cookie-maps">
+                    <span>Google Maps</span>
+                </label>
+            </div>
+            <div class="cookie-bannerbuttons">
+                <button class="btn btn--primary" id="cookie-accept-all">Alle akzeptieren</button>
+                <button class="btn btn--outline" id="cookie-accept-selected">Auswahl speichern</button>
+                <button class="btn btn--outline" id="cookie-reject">Nur notwendige</button>
+            </div>
+        </div>
+    </div>
+    
     <!-- Mobile Navigation Overlay (moved outside header for proper z-index) -->
     <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 

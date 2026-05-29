@@ -24,6 +24,85 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
 
     // ==========================================================================
+    // 1.5. COOKIE BANNER
+    // ==========================================================================
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAcceptAll = document.getElementById('cookie-accept-all');
+    const cookieAcceptSelected = document.getElementById('cookie-accept-selected');
+    const cookieReject = document.getElementById('cookie-reject');
+    const cookieMapsCheckbox = document.getElementById('cookie-maps');
+
+    // Check if user has already made a cookie choice
+    const hasCookieConsent = localStorage.getItem('eichenhof_cookie_consent');
+
+    // Show cookie banner if no consent has been given
+    if (cookieBanner && !hasCookieConsent) {
+        // Small delay for smoother animation
+        setTimeout(() => {
+            cookieBanner.setAttribute('aria-hidden', 'false');
+            cookieBanner.classList.add('cookie-banner--visible');
+        }, 500);
+    } else if (cookieBanner) {
+        // Hide banner completely if consent already given
+        cookieBanner.style.display = 'none';
+    }
+
+    // Function to save cookie preferences
+    const saveCookiePreferences = (preferences) => {
+        localStorage.setItem('eichenhof_cookie_consent', JSON.stringify(preferences));
+        
+        // Hide the banner with animation
+        if (cookieBanner) {
+            cookieBanner.classList.remove('cookie-banner--visible');
+            cookieBanner.setAttribute('aria-hidden', 'true');
+            
+            // Remove from DOM after animation
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 500);
+        }
+
+        // Handle Google Maps consent
+        // If maps is enabled, you could load the Google Maps script here
+        if (preferences.maps) {
+            console.log('Google Maps consent given - maps can be loaded');
+        }
+    };
+
+    // Accept All button
+    if (cookieAcceptAll) {
+        cookieAcceptAll.addEventListener('click', () => {
+            saveCookiePreferences({
+                necessary: true,
+                maps: true,
+                timestamp: new Date().toISOString()
+            });
+        });
+    }
+
+    // Accept Selected button
+    if (cookieAcceptSelected) {
+        cookieAcceptSelected.addEventListener('click', () => {
+            saveCookiePreferences({
+                necessary: true,
+                maps: cookieMapsCheckbox ? cookieMapsCheckbox.checked : false,
+                timestamp: new Date().toISOString()
+            });
+        });
+    }
+
+    // Reject All (Only Necessary) button
+    if (cookieReject) {
+        cookieReject.addEventListener('click', () => {
+            saveCookiePreferences({
+                necessary: true,
+                maps: false,
+                timestamp: new Date().toISOString()
+            });
+        });
+    }
+
+    // ==========================================================================
     // 2. STICKY HEADER & HERO PARALLAX
     // ==========================================================================
     const handleScroll = () => {
